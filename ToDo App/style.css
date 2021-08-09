@@ -25,3 +25,9 @@ body {
 .input-box {
   margin-top: 2em;
 }
+
+.new-list-item {
+  text-align: center;
+  margin-left: .5em;
+  margin-top: .8em;
+}

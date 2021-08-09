@@ -12,14 +12,26 @@
         <div class="main-title">
             <h1>ToDo List</h1>
         </div>
+
+
+
             <form action="#">
+
                 <div class="input-box">
-                    <input type="text" placeholder="Add your new items here!"id="item-type" label="" name="Add your item here!">
-                    <button type="submit">Submit</button>
-                    <button type="reset">Clear List</button>
+                    <input type="text" placeholder="Add your new items here!" onfocus="this.placeholder=''" onblur="this.placeholder='Add your new items here!'" id="new-item-field" class="item-field" label="item-field" name="Add your items here!">
+
+                    <button class="submit-new-item" id="submit-button" type="submit">Submit</button>
+
+                    <button class="clear-list" type="reset">Clear List</button>
                 </div>
+
             </form>
+
+
+        <p class="new-list-item"></p>
+
+
+
     </div>
-    
-</body>
+    <script src="script.js"></script>
 </html>
