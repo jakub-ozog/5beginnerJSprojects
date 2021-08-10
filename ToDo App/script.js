@@ -7,10 +7,9 @@ function getInputValue() {            //Input field value checking
 
 
 function getSubmit(event) {                       //Submitting value from inputfield to the console log
-    /* let submitButton = document.querySelector("submit-new-item");
-    submitButton.addEventListener("click", load);
-    console.log("parara"); */
-    console.log('buton clicked');
+    const newItemField = document.querySelector('.item-field').value;
+    getSubmit(value);
+    console.log(getSubmit);
 }
 
 const submitNewItem = document.querySelector('.submit-new-item');
