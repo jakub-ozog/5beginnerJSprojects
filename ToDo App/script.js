@@ -1,13 +1,66 @@
-// Creating variables (input, submit button)
 
-let InputField = document.querySelector(".item-field");
-let SubmitButton = document.querySelector(".submit-new-item");
-let NewListItem = document.querySelector(".new-list-item");
-let ListOfItems = document.querySelector(".items-list");
+// Selectors
+
+let todoInput = document.querySelector(".item-field");
+let todoButton = document.querySelector(".submit-new-item");
+let todoList = document.querySelector(".items-list");
+
+
+//Event Listeners
+
+todoButton.addEventListener('click', addTodo)
+
+//Functions
+
+function addTodo(event) {
+    //Prevent form from submitting
+    event.preventDefault();
+    //Create Todo DIV 
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add(".todo");
+
+    //Create LI
+    const newTodo = document.createElement("li");
+    newTodo.innerText = 'działa kurła';
+    newTodo.classList.add('todo-item');
+    todoDiv.appendChild(newTodo);
+
+    //Check complete button
+    const completeButton = document.createElement('button');
+    completeButton.innerHTML = 'Complete';
+    completeButton.classList.add("coplete-btn");
+    todoDiv.appendChild(completeButton);
+
+    //Check trash button
+    const trashButton = document.createElement('button');
+    trashButton.innerHTML = 'Trash';
+    trashButton.classList.add("coplete-btn");
+    todoDiv.appendChild(trashButton);
+
+    //APPEND to list
+
+    todoList.appendChild(todoDiv);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Function which corresponds to the adding element on the button click
 
-SubmitButton.addEventListener('click', () => {
+/* SubmitButton.addEventListener('click', () => {
     let InputValue = InputField.value;
     if(InputValue === ""){
         alert('napisz coś');
@@ -17,32 +70,10 @@ SubmitButton.addEventListener('click', () => {
         ListOfItems.insertBefore(li, ListOfItems.childNodes[0]);
         InputField.value = '';
     }
-})
+}) */
 
 
 
 
 
 
-
-
-
-
-
-
-
-/* let newItemField = document.querySelector(".item-field");
-
-
-function getInputValue(event) {            //Input field value checking
-    event.preventDefault();
-
-    let NewUserItem = Number(newItemField.value);
-    
-}
-
-
-let submitNewItem = document.querySelector('.submit-new-item');
-submitNewItem.addEventListener('click', getInputValue);
-
-// submit-new-item.AddEeventListener("click", CheckInputField ); */
