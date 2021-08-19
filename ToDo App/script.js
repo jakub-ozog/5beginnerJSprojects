@@ -5,10 +5,13 @@ let todoInput = document.querySelector(".item-field");
 let todoButton = document.querySelector(".submit-new-item");
 let todoList = document.querySelector(".items-list");
 
+let clearlistButton = document.querySelector(".clear-list");
+
 
 //Event Listeners
 
 todoButton.addEventListener('click', addTodo)
+clearlistButton.addEventListener('click', clearTodoList);
 
 //Functions
 
@@ -17,11 +20,11 @@ function addTodo(event) {
     event.preventDefault();
     //Create Todo DIV 
     const todoDiv = document.createElement("div");
-    todoDiv.classList.add(".todo");
+    todoDiv.classList.add("todo");
 
     //Create LI
     const newTodo = document.createElement("li");
-    newTodo.innerText = 'działa kurła';
+    newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
 
@@ -40,6 +43,15 @@ function addTodo(event) {
     //APPEND to list
 
     todoList.appendChild(todoDiv);
+}
+
+
+function clearTodoList(event) {
+
+const clearTodo = document.querySelector(".items-list");
+const clearTodoNested = document.querySelector(".todo");
+const removeItem = clearTodo.removeChild(clearTodoNested);
+console.log('Div usunięty');
 }
 
 
