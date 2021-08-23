@@ -10,8 +10,8 @@ let clearlistButton = document.querySelector(".clear-list");
 
 //Event Listeners
 
-todoButton.addEventListener('click', addTodo)
-clearlistButton.addEventListener('click', clearTodoList);
+todoButton.addEventListener('click', addTodo);
+clearlistButton.addEventListener('click', removeAllChildNodes);
 
 //Functions
 
@@ -22,7 +22,9 @@ function addTodo(event) {
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
 
-    //Create LI
+
+    //Create UL/LI
+    
     const newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
@@ -39,50 +41,25 @@ function addTodo(event) {
     trashButton.innerHTML = 'Trash';
     trashButton.classList.add("coplete-btn");
     todoDiv.appendChild(trashButton);
-
     //APPEND to list
-
     todoList.appendChild(todoDiv);
 }
 
 
-function clearTodoList(event) {
 
-const clearTodo = document.querySelector(".items-list");
-const clearTodoNested = document.querySelector(".todo");
-const removeItem = clearTodo.removeChild(clearTodoNested);
-console.log('Div usunięty');
+function removeAllChildNodes() {
+    let itemsListContainer = document.querySelector('#items-list-container');
+
+    // itemsListContainer.firstElementChild can be used.
+    let listContainerChild = itemsListContainer.lastElementChild;
+    while (listContainerChild) {
+        itemsListContainer.removeChild(listContainerChild);
+        listContainerChild = itemsListContainer.lastElementChild;
+    }
+console.log('usuneli dla jej');
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Function which corresponds to the adding element on the button click
-
-/* SubmitButton.addEventListener('click', () => {
-    let InputValue = InputField.value;
-    if(InputValue === ""){
-        alert('napisz coś');
-    } else {
-        let li = document.createElement('li');
-        ListOfItems.innerHTML = InputValue;
-        ListOfItems.insertBefore(li, ListOfItems.childNodes[0]);
-        InputField.value = '';
-    }
-}) */
 
 
 
