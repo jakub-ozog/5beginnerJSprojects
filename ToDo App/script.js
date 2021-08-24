@@ -4,7 +4,6 @@
 let todoInput = document.querySelector(".item-field");
 let todoButton = document.querySelector(".submit-new-item");
 let todoList = document.querySelector(".items-list");
-
 let clearlistButton = document.querySelector(".clear-list");
 
 
@@ -39,13 +38,12 @@ function addTodo(event) {
     //Check trash button
     const trashButton = document.createElement('button');
     trashButton.innerHTML = 'Trash';
-    trashButton.classList.add("coplete-btn");
+    trashButton.classList.add("trash-button");
     todoDiv.appendChild(trashButton);
     //APPEND to list
     todoList.appendChild(todoDiv);
+
 }
-
-
 
 function removeAllChildNodes() {
     let itemsListContainer = document.querySelector('#items-list-container');
@@ -56,11 +54,15 @@ function removeAllChildNodes() {
         itemsListContainer.removeChild(listContainerChild);
         listContainerChild = itemsListContainer.lastElementChild;
     }
-console.log('usuneli dla jej');
-
 }
 
+/* funtion removeOneChildNode() {
 
+
+    trashButton.addEventListener()
+}
+
+ */
 
 
 
