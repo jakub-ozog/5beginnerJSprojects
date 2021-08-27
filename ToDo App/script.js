@@ -5,14 +5,44 @@ let todoInput = document.querySelector(".item-field");
 let todoButton = document.querySelector(".submit-new-item");
 let todoList = document.querySelector(".items-list");
 let clearlistButton = document.querySelector(".clear-list");
-
-
+let form = document.querySelector("form");
+let  errorElement = document.querySelector('.error');
 //Event Listeners
 
 todoButton.addEventListener('click', addTodo);
 clearlistButton.addEventListener('click', removeAllChildNodes);
 
 //Functions
+
+
+// todoInput.addEventListener('submit', (e) => {
+//     if(todoInput.value === '' || todoInput.value == null) {
+//         alert('wrong!');
+//         return false;
+//     }
+//     return true;
+// })
+
+// todoButton.addEventListener('click', validateInput);
+
+
+// function validateInput(e) {
+//   e.preventDefault();
+//   let form = document.querySelector("#MainForm");
+//   if (todoInput.value === "" || todoInput.value == null) {
+//       alert('wrong');
+//       return false;
+//   }
+  
+  
+// }
+
+
+
+
+
+
+
 
 function addTodo(event) {
     //Prevent form from submitting
@@ -39,30 +69,23 @@ function addTodo(event) {
     const trashButton = document.createElement('button');
     trashButton.innerHTML = 'Trash';
     trashButton.classList.add("trash-button");
+    trashButton.addEventListener('click', removeOneChildNode);
     todoDiv.appendChild(trashButton);
     //APPEND to list
     todoList.appendChild(todoDiv);
 
 }
 
-function removeAllChildNodes() {
-    let itemsListContainer = document.querySelector('#items-list-container');
-
-    // itemsListContainer.firstElementChild can be used.
-    let listContainerChild = itemsListContainer.lastElementChild;
-    while (listContainerChild) {
-        itemsListContainer.removeChild(listContainerChild);
-        listContainerChild = itemsListContainer.lastElementChild;
-    }
+function removeOneChildNode(event) {
+    let parentElem = event.target.closest('.todo')
+    parentElem.remove();
+    console.log('div deleted');
 }
 
-/* funtion removeOneChildNode() {
-
-
-    trashButton.addEventListener()
-}
-
- */
+ function removeAllChildNodes (event) {
+     const myNode = document.querySelector('.items-list');
+     myNode.innerHTML = '';
+ }
 
 
 
