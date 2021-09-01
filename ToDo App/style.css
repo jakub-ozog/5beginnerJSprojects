@@ -5,6 +5,7 @@
     margin:0;
     
 }
+
 body {
     font-family: 'Quicksand', sans-serif;
     background-color: bisque;
@@ -22,6 +23,16 @@ body {
   font-size: 3rem;
   font-weight: 500;
   border-bottom: 2px solid black;
+}
+
+form {
+  padding: 1px;
+}
+
+input {
+outline: none;
+color: #333;
+border: 1px solid #3d5a4e;
 }
 
 .input-box {
@@ -53,4 +64,16 @@ li{
   align-items: flex-end;
   margin-left: 2.2rem;
   text-align: left;
+}
+
+.error-hint {
+  color: red;
+  margin-bottom: .5rem;
+  margin-top: .2rem;
+  margin-right: 5.3rem;
+  font-size: .7rem;
+}
+
+.hidden {
+  display:none;
 }

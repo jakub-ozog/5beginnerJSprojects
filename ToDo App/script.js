@@ -5,37 +5,38 @@ let todoInput = document.querySelector(".item-field");
 let todoButton = document.querySelector(".submit-new-item");
 let todoList = document.querySelector(".items-list");
 let clearlistButton = document.querySelector(".clear-list");
-let form = document.querySelector("form");
-let  errorElement = document.querySelector('.error');
-//Event Listeners
+let errorElement = document.querySelector('.error');
 
+
+
+let form = document.querySelector("form[name='contact-form']");
+let nameInput = document.querySelector("input[name='NewItemInput']")
+
+
+// Validate function - needs to be fixed
+
+/* let validateInputs = () => {
+    if (!nameInput.value) {
+        nameInput.nextElementSibling.classList.remove('hidden');
+    }
+}
+
+todoButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    validateInputs();
+})
+ */
+
+
+
+//Event Listeners
 todoButton.addEventListener('click', addTodo);
 clearlistButton.addEventListener('click', removeAllChildNodes);
 
-//Functions
 
 
-// todoInput.addEventListener('submit', (e) => {
-//     if(todoInput.value === '' || todoInput.value == null) {
-//         alert('wrong!');
-//         return false;
-//     }
-//     return true;
-// })
-
-// todoButton.addEventListener('click', validateInput);
 
 
-// function validateInput(e) {
-//   e.preventDefault();
-//   let form = document.querySelector("#MainForm");
-//   if (todoInput.value === "" || todoInput.value == null) {
-//       alert('wrong');
-//       return false;
-//   }
-  
-  
-// }
 
 
 
@@ -76,6 +77,8 @@ function addTodo(event) {
 
 }
 
+
+
 function removeOneChildNode(event) {
     let parentElem = event.target.closest('.todo')
     parentElem.remove();
@@ -89,5 +92,6 @@ function removeOneChildNode(event) {
 
 
 
+ 
 
 
